@@ -26,8 +26,7 @@ namespace MegaDeskTeamC
             this.mainMenu = mainMenu;
         }
 
-
-        private void DisplayQuote_Load_1(object sender, EventArgs e)
+        private void DisplayQuote_Load(object sender, EventArgs e)
         {
             //textBoxFirstName.Text = this.deskQuote.FirstName;
             labelCustomerValue.Text = $"{deskQuote.FirstName} {deskQuote.LastName}";
@@ -38,7 +37,7 @@ namespace MegaDeskTeamC
             labelMaterialValue.Text = $"${deskQuote.PriceMaterial()}";
             labelRushValue.Text = $"${deskQuote.PriceRush()}";
             labelTotalValue.Text = $"${deskQuote.GetTotal()}";
-        }
+        }       
 
         private void MainMenu_Click(object sender, EventArgs e)
         {
@@ -50,6 +49,6 @@ namespace MegaDeskTeamC
         private void Exit_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
+        }      
     }
 }

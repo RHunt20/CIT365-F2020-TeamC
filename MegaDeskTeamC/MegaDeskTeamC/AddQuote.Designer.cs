@@ -64,6 +64,7 @@
             this.CreateQuote.TabIndex = 1;
             this.CreateQuote.Text = "Create Quote";
             this.CreateQuote.UseVisualStyleBackColor = true;
+            this.CreateQuote.Click += new System.EventHandler(this.CreateQuote_Click);
             // 
             // labelFirstName
             // 
@@ -211,6 +212,7 @@
             this.MinimizeBox = false;
             this.Name = "AddQuote";
             this.Text = "Add Quote";
+            this.Load += new System.EventHandler(this.AddQuote_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1,5 +1,4 @@
-﻿using MegaDeskTeamC;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -54,7 +53,7 @@ namespace MegaDeskTeamC
         {
             LoadDeskMaterialCombo(DeskMaterial);
             LoadRushCombo(Rush);
-        }
+        }      
 
         private void MainMenu_Click(object sender, EventArgs e)
         {
@@ -63,53 +62,56 @@ namespace MegaDeskTeamC
             this.Close();
         }
 
-        private void CreateQuote_Click_1(object sender, EventArgs e)
+        private void CreateQuote_Click(object sender, EventArgs e)
         {
-            try
             {
-                int width = Convert.ToInt32(textBoxWidth.Text);
-                int depth = Convert.ToInt32(textBoxDepth.Text);
-                int drawers = Convert.ToInt32((textBoxDrawers.Text));
-                if (validWidth(width) && validDepth(depth) && validDrawers(drawers))
+                try
                 {
-                    DisplayQuote displayQuote = new DisplayQuote(deskQuote, (MainMenu)Tag);
+                    int width = Convert.ToInt32(textBoxWidth.Text);
+                    int depth = Convert.ToInt32(textBoxDepth.Text);
+                    int drawers = Convert.ToInt32((textBoxDrawers.Text));
+                    if (validWidth(width) && validDepth(depth) && validDrawers(drawers))
+                    {
+                        DisplayQuote displayQuote = new DisplayQuote(deskQuote, (MainMenu)Tag);
 
-                    deskQuote.FirstName = textBoxFirstName.Text;
-                    deskQuote.LastName = textBoxLastName.Text;
-                    deskQuote.GetDesk().Width = width;
-                    deskQuote.GetDesk().Depth = depth;
-                    deskQuote.GetDesk().Drawers = drawers;
-                    deskQuote.GetDesk().Material = DeskMaterial.Text;
-                    deskQuote.RushDays = Rush.Text;
+                        deskQuote.FirstName = textBoxFirstName.Text;
+                        deskQuote.LastName = textBoxLastName.Text;
+                        deskQuote.GetDesk().Width = width;
+                        deskQuote.GetDesk().Depth = depth;
+                        deskQuote.GetDesk().Drawers = drawers;
+                        deskQuote.GetDesk().Material = DeskMaterial.Text;
+                        deskQuote.RushDays = Rush.Text;
 
-                    displayQuote.Show();
-                    this.Close();
+                        displayQuote.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        if (!validWidth(width))
+                        {
+                            labelWidth.Text = "Range 24-96:";
+                            labelWidth.ForeColor = Color.DarkRed;
+                        }
+                        if (!validDepth(depth))
+                        {
+                            labelDepth.Text = "Range 12-48:";
+                            labelDepth.ForeColor = Color.DarkRed;
+                        }
+                        if (!validDrawers(drawers))
+                        {
+                            labelDrawers.Text = "Range 0-7:";
+                            labelDrawers.ForeColor = Color.DarkRed;
+                        }
+                    }
+
                 }
-                else
+                catch (Exception exception)
                 {
-                    if (!validWidth(width))
-                    {
-                        labelWidth.Text = "Range 24-96:";
-                        labelWidth.ForeColor = Color.DarkRed;
-                    }
-                    if (!validDepth(depth))
-                    {
-                        labelDepth.Text = "Range 12-48:";
-                        labelDepth.ForeColor = Color.DarkRed;
-                    }
-                    if (!validDrawers(drawers))
-                    {
-                        labelDrawers.Text = "Range 0-7:";
-                        labelDrawers.ForeColor = Color.DarkRed;
-                    }
+                    Console.WriteLine(exception);
                 }
+            }
 
-            }
-            catch (Exception exception)
-            {
-                Console.WriteLine(exception);
-            }
-        }
+        }     
 
         private bool validWidth(int width)
         {
@@ -198,8 +200,7 @@ namespace MegaDeskTeamC
                     labelDrawers.ForeColor = Color.DarkRed;
                 }
             }
-
-        }
+        }       
     }
 
     public enum DeskMaterial

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MegaDesk_Sawyer
+namespace MegaDeskTeamC
 {
     public class Desk
     {
