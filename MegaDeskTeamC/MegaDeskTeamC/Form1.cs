@@ -27,12 +27,18 @@ namespace MegaDeskTeamC
 
         private void ViewQuotes_Click(object sender, EventArgs e)
         {
-
+            ViewAllQuotes viewAllQuoteForm = new ViewAllQuotes();
+            viewAllQuoteForm.Tag = this;
+            viewAllQuoteForm.Show(this);
+            this.Hide();
         }
 
         private void SearchQuotes_Click(object sender, EventArgs e)
         {
-
+            SearchQuotes SearchQuotesForm = new SearchQuotes();
+            SearchQuotesForm.Tag = this;
+            SearchQuotesForm.Show(this);
+            this.Hide();
         }
 
         private void Exit_Click(object sender, EventArgs e)
