@@ -8,13 +8,14 @@ namespace MegaDeskTeamC
 {
     public class DeskQuote
     {
-        private Desk desk = new Desk();
+        public Desk desk = new Desk();
 
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public int BaseDeskPrice { get; set; } = 200;
-
-        public string RushDays;
+        public string RushDays { get; set; }
+        public int TotalPrice { get; set; } 
+        public string Date { get; set; }
 
         public string getDate()
 
@@ -36,7 +37,7 @@ namespace MegaDeskTeamC
                 return deskSurfaceArea * 1;
             }
 
-            return 0;
+            return deskSurfaceArea;
         }
 
         public int PriceDrawers()
@@ -64,23 +65,27 @@ namespace MegaDeskTeamC
 
         public int PriceRush()
         {
+            int addedPrice = 0;
             if (RushDays == "3")
             {
                 if (DeskSurfaceArea() > 2000)
                 {
-                    return 80;
+                    addedPrice = 80;
+                    return addedPrice;
                 }
                 else if (DeskSurfaceArea() >= 1000 && DeskSurfaceArea() <= 2000)
                 {
-                    return 70;
+                    addedPrice = 70;
+                    return addedPrice;
                 }
                 else
                 {
-                    return 60;
+                    addedPrice = 60;
+                    return addedPrice;
                 }
             }
 
-            if (RushDays == "5")
+            else if (RushDays == "5")
             {
                 if (DeskSurfaceArea() > 2000)
                 {
@@ -92,11 +97,12 @@ namespace MegaDeskTeamC
                 }
                 else
                 {
-                    return 40;
+                    addedPrice = 40;
+                    return addedPrice;
                 }
             }
 
-            if (RushDays == "7")
+            else if (RushDays == "7")
             {
                 if (DeskSurfaceArea() > 2000)
                 {
@@ -104,14 +110,19 @@ namespace MegaDeskTeamC
                 }
                 else if (DeskSurfaceArea() >= 1000 && DeskSurfaceArea() <= 2000)
                 {
-                    return 35;
+                    addedPrice = 35;
+                    return addedPrice;
                 }
                 else
                 {
-                    return 30;
+                    addedPrice = 30;
+                    return addedPrice;
                 }
             }
-            return 0;
+            else 
+            {
+                return addedPrice;
+            }
         }
 
         public int GetTotal()

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+using System.Web.Script.Serialization;
+
 
 namespace MegaDeskTeamC
 {
@@ -75,12 +78,31 @@ namespace MegaDeskTeamC
                         DisplayQuote displayQuote = new DisplayQuote(deskQuote, (MainMenu)Tag);
 
                         deskQuote.FirstName = textBoxFirstName.Text;
-                        deskQuote.LastName = textBoxLastName.Text;
-                        deskQuote.GetDesk().Width = width;
-                        deskQuote.GetDesk().Depth = depth;
-                        deskQuote.GetDesk().Drawers = drawers;
-                        deskQuote.GetDesk().Material = DeskMaterial.Text;
+                        deskQuote.LastName = textBoxLastName.Text;         
+                        deskQuote.desk.Width = width;
+                        deskQuote.desk.Depth = depth;
+                        deskQuote.desk.Drawers = drawers;
+                        deskQuote.desk.Material = DeskMaterial.Text;
+                        deskQuote.TotalPrice = deskQuote.GetTotal();
                         deskQuote.RushDays = Rush.Text;
+                        deskQuote.Date = DateTime.Now.ToString("MM-dd-yyyy");
+
+                        string dir = System.IO.Directory.GetCurrentDirectory();
+                        string path = $@"{dir}\..\..\data\database.json";
+                        string jsonReturn = System.IO.File.ReadAllText(path);
+                        dynamic m = JsonConvert.DeserializeObject(jsonReturn);
+                        int count = ((Newtonsoft.Json.Linq.JContainer)m).Count + 1;
+                        System.IO.File.Delete(path);
+                        jsonReturn = jsonReturn.Substring(0, jsonReturn.Length - 3);
+                        System.IO.File.WriteAllText(path, jsonReturn);
+                        string intermedio = $",\r\n\"{count}\":\r\n";
+
+                        System.IO.File.AppendAllText(path, intermedio);
+                        var settings = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore, DateFormatHandling = DateFormatHandling.IsoDateFormat };
+                        var json = new JavaScriptSerializer().Serialize(deskQuote);
+                        System.IO.File.AppendAllText(path, json);
+                        string final = "}\r\n";
+                        System.IO.File.AppendAllText(path, final);
 
                         displayQuote.Show();
                         this.Close();

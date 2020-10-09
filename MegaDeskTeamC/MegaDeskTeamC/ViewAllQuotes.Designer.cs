@@ -30,6 +30,8 @@
         {
             this.MainMenu = new System.Windows.Forms.Button();
             this.Exit = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // MainMenu
@@ -52,17 +54,28 @@
             this.Exit.UseVisualStyleBackColor = true;
             this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(188, 27);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(571, 265);
+            this.dataGridView1.TabIndex = 2;
+            // 
             // ViewAllQuotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 311);
+            this.ClientSize = new System.Drawing.Size(806, 313);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Exit);
             this.Controls.Add(this.MainMenu);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ViewAllQuotes";
             this.Text = "View All Quotes";
+            this.Load += new System.EventHandler(this.ViewAllQuotes_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -71,5 +84,6 @@
 
         private System.Windows.Forms.Button MainMenu;
         private System.Windows.Forms.Button Exit;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

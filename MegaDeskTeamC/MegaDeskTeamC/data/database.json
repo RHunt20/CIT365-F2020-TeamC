@@ -1,0 +1,20 @@
+{
+  "1": {
+    "desk": {
+      "Material": "Pine",
+      "Width": 26,
+      "Depth": 26,
+      "Drawers": 5
+    },
+    "FirstName": "asdf",
+    "LastName": "jhgf",
+    "BaseDeskPrice": 200,
+    "RushDays": "5",
+    "TotalPrice": 500,
+    "Date": "10-09-2020"
+  }
+,
+"2":
+{"desk":{"Material":"Oak","Width":26,"Depth":30,"Drawers":6},"FirstName":"wer","LastName":"tre","BaseDeskPrice":200,"RushDays":"No Rush","TotalPrice":700,"Date":"10-10-2020"},
+"3":
+{"desk":{"Material":"Laminate","Width":30,"Depth":30,"Drawers":5},"FirstName":"Tesf","LastName":"Tes","BaseDeskPrice":200,"RushDays":"5","TotalPrice":1450,"Date":"10-10-2020"}}

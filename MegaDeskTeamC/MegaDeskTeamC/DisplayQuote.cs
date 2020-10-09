@@ -41,8 +41,8 @@ namespace MegaDeskTeamC
 
         private void MainMenu_Click(object sender, EventArgs e)
         {
-            MainMenu mainMenu = (MainMenu)Tag;
-            mainMenu.Show();
+            //MainMenu mainMenu = (MainMenu)Tag;
+            this.mainMenu.Show();
             this.Close();
         }
 
