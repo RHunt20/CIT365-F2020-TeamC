@@ -82,7 +82,6 @@ namespace MegaDeskTeamC
                     list.Add(desk);
                 }
             }
-            var cry = 0;
         }
     }
 }
