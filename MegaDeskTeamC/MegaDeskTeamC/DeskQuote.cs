@@ -10,7 +10,6 @@ namespace MegaDeskTeamC
     public class DeskQuote
     {
         public Desk desk = new Desk();
-
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public int BaseDeskPrice { get; set; } = 200;
