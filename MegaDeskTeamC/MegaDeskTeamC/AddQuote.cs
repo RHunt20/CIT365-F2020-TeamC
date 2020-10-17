@@ -14,7 +14,6 @@ using System.Web.Script.Serialization;
 
 namespace MegaDeskTeamC
 {
-
     public partial class AddQuote : Form
     {
         public DeskQuote deskQuote = new DeskQuote();
