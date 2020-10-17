@@ -50,22 +50,24 @@
             // 
             // MainMenu
             // 
+            this.MainMenu.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.MainMenu.Location = new System.Drawing.Point(29, 27);
             this.MainMenu.Name = "MainMenu";
             this.MainMenu.Size = new System.Drawing.Size(115, 45);
             this.MainMenu.TabIndex = 0;
             this.MainMenu.Text = "Main Menu";
-            this.MainMenu.UseVisualStyleBackColor = true;
+            this.MainMenu.UseVisualStyleBackColor = false;
             this.MainMenu.Click += new System.EventHandler(this.MainMenu_Click);
             // 
             // Exit
             // 
+            this.Exit.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.Exit.Location = new System.Drawing.Point(29, 78);
             this.Exit.Name = "Exit";
             this.Exit.Size = new System.Drawing.Size(115, 45);
             this.Exit.TabIndex = 1;
             this.Exit.Text = "Exit";
-            this.Exit.UseVisualStyleBackColor = true;
+            this.Exit.UseVisualStyleBackColor = false;
             this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
             // labelCustomer
