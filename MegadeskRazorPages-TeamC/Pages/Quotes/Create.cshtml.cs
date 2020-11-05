@@ -32,7 +32,7 @@ namespace MegadeskRazorPages.Pages.Quotes
             {
                 return Page();
             }
-
+            DeskQuote.TotalPrice = DeskQuote.GetTotal();
             _context.DeskQuote.Add(DeskQuote);
             await _context.SaveChangesAsync();
 

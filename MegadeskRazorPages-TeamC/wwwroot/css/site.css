@@ -12,17 +12,42 @@ a.navbar-brand {
     width: 300px;
 }
 
-#btnHome p{
-    vertical-align: middle;
+.btn-secondary {
+    background-color: #2e2c25;
+    border-color: white;
+}
+.btn-secondary:hover {
+    color: #fff;
+    background-color: #9a947c;
+    border-color: #9a947c;
 }
 
-.container {
+/*.container {
     margin: auto;
     text-align: center;
+}*/
+
+.w-100 {
+    height: 400px;
 }
 
-.container p {
-    vertical-align: middle;
+.bg-white {
+    background-color: #2e2c25 !important;   
+}
+.navbar-light .navbar-brand {
+    color: white;
+}
+.text-dark {
+    color: azure !important;
+}
+
+#titlesMenu {
+    margin-top: 120px;
+    font-size: x-large;
+}
+
+#btnGroupMenu {
+    text-align: center;
 }
 /* Sticky footer styles
 -------------------------------------------------- */

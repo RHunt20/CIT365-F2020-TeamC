@@ -14,5 +14,6 @@ namespace MegadeskRazorPages.Models
         }
 
         public DbSet<MegadeskRazorPages.Models.DeskQuote> DeskQuote { get; set; }
+        public DbSet<MegadeskRazorPages.Models.Desk> Desk { get; set; }
     }
 }
