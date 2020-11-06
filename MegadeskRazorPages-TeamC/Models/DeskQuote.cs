@@ -23,11 +23,11 @@ namespace MegadeskRazorPages.Models
         [Display(Name = "Rush days")]
         public string RushDays { get; set; }
         [Display(Name = "Total price")]
+        [DataType(DataType.Currency)]
         public int TotalPrice { get; set; }
         [Display(Name = "Quote Date")]
         [DataType(DataType.Date)]
         public string Date { get; set; }
-
 
         public int PriceRush()
         {

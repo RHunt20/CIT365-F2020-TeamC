@@ -29,7 +29,25 @@ namespace MegadeskRazorPages.Pages.Quotes
                 return NotFound();
             }
 
-            DeskQuote = await _context.DeskQuote.FirstOrDefaultAsync(m => m.ID == id);
+            DeskQuote = await _context.DeskQuote.Where(m => m.ID == id).Select(x => new
+            {
+                x.ID,
+                x.Date,
+                x.desk,
+                x.FirstName,
+                x.LastName,
+                x.RushDays,
+                x.TotalPrice
+            }).Select(x => new DeskQuote
+            {
+                ID = x.ID,
+                desk = x.desk,
+                Date = x.Date,
+                FirstName = x.FirstName,
+                LastName = x.LastName,
+                RushDays = x.RushDays,
+                TotalPrice = x.TotalPrice
+            }).FirstOrDefaultAsync();
 
             if (DeskQuote == null)
             {
@@ -44,7 +62,7 @@ namespace MegadeskRazorPages.Pages.Quotes
             {
                 return Page();
             }
-
+            DeskQuote.TotalPrice = DeskQuote.GetTotal();
             _context.Attach(DeskQuote).State = EntityState.Modified;
 
             try

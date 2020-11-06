@@ -118,28 +118,6 @@ namespace MegadeskRazorPages.Pages.Quotes
                 Quotes = Quotes.Skip(Quotes.Count());
             }
 
-            //if (!string.IsNullOrEmpty(SearchString))
-            //{
-            //    Quotes = Quotes.Where(s => s.FirstName.Contains(SearchString));
-            //}
-            //else 
-            //{
-            //    Quotes = Quotes.Skip(Quotes.Count());
-            //}
-
-            //if (!string.IsNullOrEmpty(SearchDate))
-            //{
-            //    Quotes = from s in _context.DeskQuote
-            //             select s;
-            //    Quotes = Quotes.Where(x => x.Date == SearchDate);
-            //}
-            //else
-            //{
-            //    Quotes = Quotes.Skip(Quotes.Count());
-            //}
-            //Date = new SelectList(await DateQuery.Distinct().ToListAsync());
-
-
             switch (sortOrder)
             {
                 case "FirstName_Asc_Sort":

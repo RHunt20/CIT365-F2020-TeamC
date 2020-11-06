@@ -5,11 +5,8 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Quotes</h1>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -84,3 +81,9 @@
 }
     </tbody>
 </table>
+<hr />
+<div>
+    <a class="btn btn-outline-secondary" asp-page="Create">Create quote</a>
+    <a class="btn btn-outline-secondary" asp-page="../Index">Main menu</a>
+    <a class="btn btn-outline-secondary" asp-page="SearchQuote">Search quote</a>
+</div>

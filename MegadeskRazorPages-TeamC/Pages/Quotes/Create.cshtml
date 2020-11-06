@@ -5,9 +5,8 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1>Create quote</h1>
 
-<h4>DeskQuote</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -68,18 +67,20 @@
         </div>*@
             <div class="form-group">
                 <label asp-for="DeskQuote.Date" class="control-label"></label>
-                <input asp-for="DeskQuote.Date" class="form-control" />
+                <input asp-for="DeskQuote.Date" class="form-control" value="@DateTime.Today.ToString("yyyy-MM-dd")" readonly/>
                 <span asp-validation-for="DeskQuote.Date" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-outline-primary" id="btnCreate"/>
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="Index">Back to List</a>
+    <a class="btn btn-outline-secondary" asp-page="../Index">Main menu</a>
+    <a class="btn btn-outline-secondary" asp-page="Index">View all quotes</a>
+    <a class="btn btn-outline-secondary" asp-page="SearchQuote">Search quote</a>
 </div>
 
 @section Scripts {

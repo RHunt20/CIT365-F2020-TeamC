@@ -49,6 +49,14 @@ a.navbar-brand {
 #btnGroupMenu {
     text-align: center;
 }
+
+td {
+    text-align: center;
+}
+
+#btnCreate {
+    width: 350px;
+}
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
