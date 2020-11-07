@@ -31,6 +31,7 @@ namespace MegadeskRazorPages.Models
 
         public int PriceRush()
         {
+
             int result = 0;
             if (RushDays == "3")
             {

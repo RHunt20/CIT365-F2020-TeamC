@@ -5,9 +5,11 @@
     ViewData["Title"] = "Index";
 }
 
+<script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+
 <h1>Quotes</h1>
 
-<table class="table">
+<table class="sortable">
     <thead>
         <tr>
             <th>
@@ -17,7 +19,7 @@
                 @Html.DisplayNameFor(model => model.DeskQuote[0].FirstName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].LastName)
+                @Html.DisplayNameFor(model => model.DeskQuote[0].LastName)  
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.DeskQuote[0].desk.Width)

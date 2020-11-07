@@ -57,6 +57,15 @@ td {
 #btnCreate {
     width: 350px;
 }
+
+.sortable {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+}
+body {
+    background-color: #F9F0CC
+}
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
