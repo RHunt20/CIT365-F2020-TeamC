@@ -22,6 +22,7 @@ namespace MegadeskRazorPages.Pages.Quotes
 
         public async Task OnGetAsync()
         {
+
             DeskQuote = await _context.DeskQuote.Select(x => new
             {
                 x.ID,
