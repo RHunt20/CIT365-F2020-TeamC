@@ -2,13 +2,13 @@
 @model TeamSacramentMeetingPlanner.Pages.Meetings.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Agenda";
 }
 
-<h1>Index</h1>
+<h1>AGENDA</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create" button class="btn"><i class="fa align-items-sm-start"></i>Create new agenda</a>
 </p>
 <form asp-action="OnGetAsync" method="get">
     <p>
@@ -69,9 +69,9 @@
                 @Html.DisplayFor(modelItem => item.ClosingPrayer)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-page="./Edit" asp-route-id="@item.Id" button class="btn"><i class="fa fa-edit"></i>Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id" button class="btn"><i class="fa fa-list"></i>Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id" button class="btn"><i class="fa fa-trash"></i>Delete</a>
             </td>
         </tr>
 }
