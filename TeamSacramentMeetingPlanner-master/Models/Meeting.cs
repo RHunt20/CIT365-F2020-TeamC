@@ -18,20 +18,20 @@ namespace TeamSacramentMeetingPlanner.Models
         [Required]
         public string Conductor { get; set; }
         [Display(Name = "Opening Hymn")]
-        [StringLength(100, MinimumLength = 3)]
+        //[StringLength(100, MinimumLength = 3)]
         [Required]
         public string OpeningHymnNumber { get; set; }
         [Display(Name = "Sacrament Hymn")]
-        [StringLength(100, MinimumLength = 3)]
+        //[StringLength(100, MinimumLength = 3)]
         [Required]
         public string SacramentHymnNumber { get; set; }
         [Display(Name = "Rest Hymn")]
-        [StringLength(100, MinimumLength = 3)]
+        //[StringLength(100, MinimumLength = 3)]
         public string RestHymnNumber { get; set; }
         [Display(Name = "Closing Hymn")]
         [Required]
         public string ClosingHymn { get; set; }
-        [StringLength(100, MinimumLength = 3)]
+        //[StringLength(100, MinimumLength = 3)]
         [Required]
         public string OpeningPrayer { get; set; }
         [Display(Name = "Closing Prayer")]
