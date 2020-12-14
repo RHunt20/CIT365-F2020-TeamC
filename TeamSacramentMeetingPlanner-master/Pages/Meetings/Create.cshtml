@@ -98,19 +98,12 @@
         </form>
     </div>
 </div>
-<input type="button" value="Print Form" onclick="window.print()" />
+
 <div>
     <a asp-page="Index">Back to List</a>
 </div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-<script type="text/javascript">
-    $(function () {
-        $("#HymnName").ajaxComplete({
-            source: ["Riqui", "Tellez"],
-            minLength: 1
-        });
-    });
-</script> 
+
 }
